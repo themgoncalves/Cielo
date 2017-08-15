@@ -24,7 +24,7 @@ namespace Cielo.Request.Entites.Common
                          string securityCode,
                          CardBrand cardBrand)
         {
-            CardToken = CardToken;
+            CardToken = cardToken;
             SecurityCode = securityCode;
             Brand = cardBrand.ToDescription();
         }
@@ -62,7 +62,7 @@ namespace Cielo.Request.Entites.Common
         public string Holder { get; private set; }
         public string ExpirationDate
         {
-            get { return _expiration.ToString(); }
+            get { return _expiration?.ToString(); }
         }
         public string SecurityCode { get; private set; }
         public string Brand { get; private set; }

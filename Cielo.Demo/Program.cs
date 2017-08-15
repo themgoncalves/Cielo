@@ -93,7 +93,7 @@ namespace Cielo.Demo
 
             Customer customer = new Customer("John Doe");
 
-            CreditCard creditCard = new CreditCard("6e1bf77a-b28b-4660-b14f-455e2a1c95e9", "123", CardBrand.Visa);
+            CreditCard creditCard = new CreditCard("ea9b8398-e8bb-4e77-a865-66109fc4563e", "123", CardBrand.Visa);
 
             Payment payment = new Payment(PaymentType.CreditCard, 380.2m, 1, "", creditCard: creditCard);
 

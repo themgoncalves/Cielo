@@ -57,7 +57,7 @@ Não tem problema, basta [Clicar aqui](https://github.com/oforia/Cielo/releases)
 Basta você adicionar as seguintes chaves e substituir com seus valores na seção appSettings de seu Web.config ou App.config.
 
 Não possui credenciais para Sandbox? [Clique aqui](https://cadastrosandbox.cieloecommerce.cielo.com.br) para seu o seu.
-```
+```csharp
   <appSettings>
 
     <!-- Cielo -->
@@ -91,7 +91,7 @@ Não possui credenciais para Sandbox? [Clique aqui](https://cadastrosandbox.ciel
 
 Utilize o código abaixo caso _queira personalizar_ os valores, se não a aplicação irá **procurar automaticamente pelas configurações** em seu Web.config ou App.config .
 
-```
+```csharp
 using Cielo.Configuration;
 //...
 CustomConfiguration configuration = new CustomConfiguration()
@@ -111,7 +111,7 @@ CieloService cieloService = new CieloService(configuration);
 ### Criando uma transação
 
 
-```
+```csharp
 using Cielo.Enums;
 using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;
@@ -154,7 +154,7 @@ catch (Exception ex)
 ### Criando uma transação com Card Token
 
 
-```
+```csharp
 using Cielo.Enums;
 using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;
@@ -194,7 +194,7 @@ catch (Exception ex)
 ### Cancelando uma transação
 
 
-```
+```csharp
 using Cielo.Enums;
 using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;
@@ -233,7 +233,7 @@ catch (Exception ex)
 
 #### Captura Total
 
-```
+```csharp
 using Cielo.Enums;
 using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;
@@ -263,7 +263,7 @@ catch (Exception ex)
 
 #### Captura Parcial
 
-```
+```csharp
 using Cielo.Enums;
 using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;
@@ -293,7 +293,7 @@ catch (Exception ex)
 
 ### Consultar Transação
 
-```
+```csharp
 using Cielo.Enums;
 using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;
@@ -328,7 +328,7 @@ catch (Exception ex)
 
 ### Salvando um Cartão
 
-```
+```csharp
 using Cielo.Enums;
 using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;

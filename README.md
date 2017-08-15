@@ -123,7 +123,7 @@ CieloService cieloService = new CieloService(configuration);
 var customer = new Customer("John Doe");
 
 var creditCard = new CreditCard("0000.0000.0000.0001",
-                                "João Noberto",
+                                "John Doe",
                                 new CardExpiration(2020, 9), "123", CardBrand.Visa);
 
 var payment = new Payment(PaymentType.CreditCard, 380.2m, 1, "", creditCard: creditCard);

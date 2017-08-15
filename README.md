@@ -1,10 +1,10 @@
-#Cielo E-Commerce
+# Cielo E-Commerce
 
 Integração com o Webservice 3.0 do [Cielo E-Commerce](http://developercielo.github.io/Webservice-3.0/).
 Projeto de demonstração na solução.
 
 
-###Suporte
+### Suporte
 
 Os seguintes recursos do Webservice são suportados pela aplicação:
 
@@ -50,9 +50,9 @@ E após finalizar, abrir a solução (_Cielo.sln_) com o Visual Studio
 Não tem problema, basta [Clicar aqui](https://github.com/oforia/Cielo/releases) para baixar o repositório em arquivo .zip e depois extrair em seu local favorito.
 
 
-###Configurações
+### Configurações
 
-####Web.config ou App.config
+#### Web.config ou App.config
 
 Basta você adicionar as seguintes chaves e substituir com seus valores na seção appSettings de seu Web.config ou App.config.
 
@@ -87,7 +87,7 @@ Não possui credenciais para Sandbox? [Clique aqui](https://cadastrosandbox.ciel
 ```
 
 
-###Na aplicação
+### Na aplicação
 
 Utilize o código abaixo caso _queira personalizar_ os valores, se não a aplicação irá **procurar automaticamente pelas configurações** em seu Web.config ou App.config .
 
@@ -108,7 +108,7 @@ CieloService cieloService = new CieloService(configuration);
 ```
 
 
-###Criando uma transação
+### Criando uma transação
 
 
 ```
@@ -151,7 +151,7 @@ catch (Exception ex)
 ```
 
 
-###Criando uma transação com Card Token
+### Criando uma transação com Card Token
 
 
 ```
@@ -191,7 +191,7 @@ catch (Exception ex)
 }
 ```
 
-###Cancelando uma transação
+### Cancelando uma transação
 
 
 ```
@@ -228,10 +228,10 @@ catch (Exception ex)
 ```
 
 
-###Capturando uma transação
+### Capturando uma transação
 
 
-####Captura Total
+#### Captura Total
 
 ```
 using Cielo.Enums;
@@ -261,7 +261,7 @@ catch (Exception ex)
 ```
 
 
-####Captura Parcial
+#### Captura Parcial
 
 ```
 using Cielo.Enums;
@@ -291,7 +291,7 @@ catch (Exception ex)
 ```
 
 
-###Consultar Transação
+### Consultar Transação
 
 ```
 using Cielo.Enums;
@@ -326,7 +326,7 @@ catch (Exception ex)
 ```
 
 
-###Salvando um Cartão
+### Salvando um Cartão
 
 ```
 using Cielo.Enums;

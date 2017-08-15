@@ -79,8 +79,8 @@ Não possui credenciais para Sandbox? [Clique aqui](https://cadastrosandbox.ciel
     
     <add key="cielo.endpoint.default" value="https://apisandbox.cieloecommerce.cielo.com.br" />
     <add key="cielo.endpoint.query" value="https://apiquerysandbox.cieloecommerce.cielo.com.br" />
-    <add key="cielo.customer.id" value="ec913438-b8c8-47cd-ba8b-f79b46bff398" />
-    <add key="cielo.customer.key" value="EHOYMMLXTUELKWWIECPCMEOVJLRABVBLVBNCNXYR" />
+    <add key="cielo.customer.id" value="" />
+    <add key="cielo.customer.key" value="" />
     <add key="cielo.return.url" value="/" />
   </appSettings>
 

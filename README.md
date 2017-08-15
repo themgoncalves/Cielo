@@ -118,8 +118,6 @@ using Cielo.Request.Entites.Common;
 using Cielo.Responses.Exceptions;
 //...
 
-CieloService cieloService = new CieloService(configuration);
-
 var customer = new Customer("John Doe");
 
 var creditCard = new CreditCard("0000.0000.0000.0001",
@@ -160,8 +158,6 @@ using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;
 using Cielo.Responses.Exceptions;
 //...
-
-CieloService cieloService = new CieloService(configuration);
 
 var customer = new Customer("John Doe");
 

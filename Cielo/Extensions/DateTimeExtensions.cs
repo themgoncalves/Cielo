@@ -10,7 +10,6 @@ namespace Cielo.Extensions
         }
         public static string ToCieloShortFormatDate(this DateTime date)
         {
-
             return date.ToString("yyyy-MM-dd");
         }
         public static string ToCieloFormatDate(this DateTime? date)
@@ -19,7 +18,6 @@ namespace Cielo.Extensions
         }
         public static string ToCieloShortFormatDate(this DateTime? date)
         {
-
             return date?.ToString("yyyy-MM-dd");
         }
     }

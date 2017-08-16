@@ -62,7 +62,6 @@
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\EnumExtension.cs" />
     <Compile Include="Enums\ReturnCode.cs" />
-    <Compile Include="Extensions\StatusExtensions.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Extensions\UrlExtesions.cs" />
     <Compile Include="ICieloService.cs" />

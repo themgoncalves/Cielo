@@ -29,8 +29,8 @@ namespace Cielo.Responses
         [OnDeserialized]
         private void OnDeserialized(StreamingContext context)
         {
-            Status = (Status)EnumExtension.ParseEnum<Status>(_response["Status"]?.ToString());
-            ReturnCode = (ReturnCode)EnumExtension.ParseEnum<ReturnCode>(_response["ReturnCode"]?.ToString());
+            Status = EnumExtension.ToEnum<Status>(_response["Status"]?.ToString());
+            ReturnCode = EnumExtension.ToEnum<ReturnCode>(_response["ReturnCode"]?.ToString());
             ReturnMessage = _response["ReturnMessage"]?.ToString();
         }
 

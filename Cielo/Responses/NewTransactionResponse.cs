@@ -37,8 +37,8 @@ namespace Cielo.Responses
             Tid = payment["Tid"]?.ToString();
             AuthorizationCode = payment["AuthorizationCode"]?.ToString();
             PaymentId = Guid.Parse(payment["PaymentId"]?.ToString());
-            Status = (Status)EnumExtension.ParseEnum<Status>(payment["Status"]?.ToString());
-            ReturnCode = (ReturnCode)EnumExtension.ParseEnum<ReturnCode>(payment["ReturnCode"]?.ToString());
+            Status = EnumExtension.ToEnum<Status>(payment["Status"]?.ToString());
+            ReturnCode = EnumExtension.ToEnum<ReturnCode>(payment["ReturnCode"]?.ToString());
             ReturnMessage = payment["ReturnMessage"]?.ToString();
         }
 

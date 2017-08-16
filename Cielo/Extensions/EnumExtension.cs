@@ -6,11 +6,6 @@ namespace Cielo.Extensions
 {
     public static class EnumExtension
     {
-        public static T ParseEnum<T>(string value)
-        {
-            return (T)Enum.Parse(typeof(T), value, true);
-        }
-
         public static TEnum ToEnum<TEnum>(this string value)
         {
             return (TEnum)Enum.Parse(typeof(TEnum), value, true);

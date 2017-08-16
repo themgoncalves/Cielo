@@ -40,7 +40,7 @@ Existem dois métodos para você utilizar este repositório.
 
 Basta executar os comandos abaixos para iniciar:
 ```
-> git clone git@github.com:oforia/Cielo.git
+> git clone https://github.com/oforia/Cielo.git
 > cd Cielo
 ```
 E após finalizar, abrir a solução (_Cielo.sln_) com o Visual Studio

@@ -50,7 +50,7 @@ E após finalizar, abrir a solução (_Cielo.sln_) com o Visual Studio
 Não tem problema, basta [Clicar aqui](https://github.com/oforia/Cielo/releases) para baixar o repositório em arquivo .zip e depois extrair em seu local favorito.
 
 
-### Configurações
+## Configurações
 
 #### Web.config ou App.config
 
@@ -107,6 +107,9 @@ CieloService cieloService = new CieloService(configuration);
 
 ```
 
+## Documentação
+
+Os exemplos a seguir se aplicam na grande maioria dos casos, mas se mesmo assim precisar de algo diferente, basta ler a [Documentação da Cielo](http://developercielo.github.io/Webservice-3.0/) e personalizar as _models_ para envio.
 
 ### Criando uma transação
 
@@ -350,4 +353,50 @@ catch (Exception ex)
 {
     //erros genéricos
 }
+```
+
+## Projeto de Demonstração
+
+Ao abrir a solução (_Cielo.sln_) você encontrará um projeto chamado **Cielo.Demo**.
+Para executá-lo é simples, basta seguir os seguintes passos:
+1) Clicando o _botão direito_ do mouse em cima do projeto _Cielo.Demo_, clique em _Complilar_ ou _Recompilar_.
+2) Após, basta você abrir o _Prompt de Comando_ do Windows.
+3) Com o Prompt aberto, execute a seguinte instrução:
+```
+> cd C:\DIRETORIO_DO_MEU_PROJETO\Cielo.Demo\bin\Debug
+> Cielo.Demo.exe
+```
+OBS: Você deverá trocar o _DIRETORIO_DO_MEU_PROJETO_ pelo endereço do local de seu projeto.
+
+Após isso, você deverá ver a seguinte saída no prompt:
+
+```
+Choose an option to execute
+
+Commands available:
+all                 : Execute all available tests
+cancel              : Cancel a transaction
+capture             : Capture a transaction
+capture-partial     : Capture partially a transaction
+check               : Check a transaction
+new                 : Create a new transaction
+new-cardtoken       : Create a new transaction with a Card Token
+savecard            : Salvar um Cartão de Crédito
+
+```
+
+E pronto! Para utilizar basta selecionar uma opção, por exemplo:
+
+```
+> Cielo.Demo.exe all
+```
+ou 
+
+```
+> Cielo.Demo.exe capture
+```
+ou
+
+```
+> Cielo.Demo.exe new
 ```

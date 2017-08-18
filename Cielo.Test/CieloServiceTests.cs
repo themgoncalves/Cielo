@@ -142,13 +142,15 @@ namespace Cielo.Test
         {
             CieloService cieloService = new CieloService();
 
-            var response = cieloService.CheckTransaction(merchantOrderId: "14421");
+            var response = cieloService.CheckTransaction(paymentId: Guid.Parse("B4BB5BBA-3DDF-4F3E-8A9C-6EF17D9E23E6"));
 
             response.Should().NotBeNull();
             response.Should().BeOfType<CheckTransactionResponse>();
-            response.ReasonMessage.Should().NotBeEmpty();
-            response.Payments.Should().BeOfType<List<PaymentResponse>>();
-            response.Payments.Count.Should().BeGreaterThan(0);
+            response.Customer.Name.Should().NotBeEmpty();
+            response.Payment.Tid.Should().NotBeEmpty();
+            response.Payment.AuthorizationCode.Should().NotBeEmpty();
+            response.Payment.PaymentId.Should().NotBeEmpty();
+            response.Payment.Status.Should().BeOfType<Status>();
         }
 
         [Test]

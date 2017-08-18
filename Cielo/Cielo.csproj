@@ -80,6 +80,12 @@
     <Compile Include="Request\Entites\TransactionRequest.cs" />
     <Compile Include="Responses\CardResponse.cs" />
     <Compile Include="Responses\CheckTransactionResponse.cs" />
+    <Compile Include="Responses\Entities\AddressResponse.cs" />
+    <Compile Include="Responses\Entities\CreditCardResponse.cs" />
+    <Compile Include="Responses\Entities\CustomerResponse.cs" />
+    <Compile Include="Responses\Entities\DebitCardResponse.cs" />
+    <Compile Include="Responses\Entities\LinkResponse.cs" />
+    <Compile Include="Responses\Entities\PaymentResponse.cs" />
     <Compile Include="Responses\Exceptions\ErrorResponse.cs" />
     <Compile Include="Responses\Exceptions\ResponseException.cs" />
     <Compile Include="Responses\TransactionResponse.cs" />

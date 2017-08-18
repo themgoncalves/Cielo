@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using Cielo.Configuration;
 using Cielo.Enums;
 using Cielo.Request.Entites;
 using Cielo.Request.Entites.Common;
@@ -14,7 +16,7 @@ namespace Cielo.Test
     public class CieloServiceTests
     {
         [Test]
-        public void CreateRequest_ShouldReturnNewTransactionResponse()
+        public void CreateCreditCardRequest_ShouldReturnNewTransactionResponse()
         {
             CieloService cieloService = new CieloService();
 
@@ -22,7 +24,7 @@ namespace Cielo.Test
 
 
             CreditCard creditCard = new CreditCard("0000.0000.0000.0001",
-                                            "João Nínguem",
+                                            "John Doe",
                                             new CardExpiration(2017, 9), "123", CardBrand.Visa);
 
             Payment payment = new Payment(PaymentType.CreditCard, 380.2m, 1, "", creditCard: creditCard);
@@ -41,6 +43,47 @@ namespace Cielo.Test
             response.Status.Should().BeOfType<Status>();
             response.ReturnCode.Should().BeOfType<ReturnCode>();
             response.ReturnMessage.Should().NotBeEmpty();
+            response.AuthenticationUrl.Should().BeNullOrEmpty();
+        }
+
+        [Test]
+        public void CreateDebitCard_ShouldReturnNewTransactionResponse()
+        {
+            CustomConfiguration configuration = new CustomConfiguration()
+            {
+                DefaultEndpoint = ConfigurationManager.AppSettings["cielo.endpoint.default"],
+                QueryEndpoint = ConfigurationManager.AppSettings["cielo.endpoint.query"],
+                MerchantId = ConfigurationManager.AppSettings["cielo.customer.id"],
+                MerchantKey = ConfigurationManager.AppSettings["cielo.customer.key"],
+                ReturnUrl = "http://localhost" + ConfigurationManager.AppSettings["cielo.return.url"] + "/14421"
+            };
+
+            CieloService cieloService = new CieloService(configuration);
+
+            Customer customer = new Customer("John Doe");
+
+
+            DebitCard debitCard = new DebitCard("0000.0000.0000.0001",
+                                            "John Doe",
+                                            new CardExpiration(2017, 9), "123", CardBrand.Visa);
+
+            Payment payment = new Payment(PaymentType.DebitCard, 380.2m, 1, "", debitCard: debitCard, returnUrl: configuration.ReturnUrl);
+
+            var transaction = new TransactionRequest("14421", customer, payment);
+
+            var response = cieloService.CreateTransaction(transaction);
+            
+            response.Should().NotBeNull();
+            response.Should().BeOfType<NewTransactionResponse>();
+            response.Tid.Should().NotBeEmpty();
+            response.PaymentId.Should().NotBeEmpty();
+            response.MerchantOrderId.Should().NotBeEmpty();
+            response.ProofOfSale.Should().NotBeEmpty();
+            response.AuthorizationCode.Should().BeNullOrEmpty();
+            response.Status.Should().BeOfType<Status>();
+            response.ReturnCode.Should().BeOfType<ReturnCode>();
+            response.ReturnMessage.Should().BeNullOrEmpty();
+            response.AuthenticationUrl.Should().NotBeNullOrEmpty();
         }
         
         [Test]

@@ -1,5 +1,4 @@
 ﻿using Cielo.Extensions;
-using Cielo.Enums;
 using FluentAssertions;
 using NUnit.Framework;
 using System;

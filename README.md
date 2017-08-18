@@ -111,7 +111,7 @@ CieloService cieloService = new CieloService(configuration);
 
 Os exemplos a seguir se aplicam na grande maioria dos casos, mas se mesmo assim precisar de algo diferente, basta ler a [Documentação da Cielo](http://developercielo.github.io/Webservice-3.0/) e personalizar as _models_ para envio.
 
-### Criando uma transação
+### Criando uma transação com cartão de crédito
 
 
 ```csharp
@@ -151,6 +151,46 @@ catch (Exception ex)
 }
 ```
 
+### Criando uma transação com cartão de débito
+
+
+```csharp
+using Cielo.Enums;
+using Cielo.Request.Entites;
+using Cielo.Request.Entites.Common;
+using Cielo.Responses.Exceptions;
+//...
+
+var customer = new Customer("John Doe");
+
+var debitCard = new DebitCard("0000.0000.0000.0001",
+                              "John Doe",
+                              new CardExpiration(2017, 9), "123", CardBrand.Visa);
+
+var payment = new Payment(PaymentType.DebitCard, 380.2m, 1, "", debitCard: debitCard, returnUrl: configuration.ReturnUrl);
+
+var transaction = new TransactionRequest("128745", customer, payment);
+
+var cieloService = new CieloService(configuration);
+
+try
+{
+    var response = cieloService.CreateTransaction(transaction);
+    Console.WriteLine($"Feito! Status: {response.Status}, Tid: {response.Tid}, PaymentId: {response.PaymentId}, AuthenticationUrl: {response.AuthenticationUrl}"); //exemplo de retorno
+    //Você deve redirecionar o usuário para a URL fornecida no 'response.AuthenticationUrl'
+}
+catch (ResponseException ex)
+{
+    //Erro personalizado das Requisições
+    //Error Id:       ex.ResponseError.Id
+    //Message:        ex.ResponseError.Message
+    //HttpStatusCode: ex.ResponseError.HttpStatusCode
+}
+catch (Exception ex)
+{
+    //erros genéricos
+}
+```
 
 ### Criando uma transação com Card Token
 

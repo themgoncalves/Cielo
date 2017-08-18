@@ -51,7 +51,7 @@ namespace Cielo.Request.Entites.Common
                 else
                     _creditCard = creditCard;
 
-            else if (type == PaymentType.CreditCard)
+            else if (type == PaymentType.DebitCard)
                 if (debitCard == null)
                     throw new ArgumentNullException(paramName: nameof(debitCard), message: "Your DebitCard information cannot be null.");
                 else

@@ -40,6 +40,7 @@ namespace Cielo.Responses
             Status = EnumExtension.ToEnum<Status>(payment["Status"]?.ToString());
             ReturnCode = EnumExtension.ToEnum<ReturnCode>(payment["ReturnCode"]?.ToString());
             ReturnMessage = payment["ReturnMessage"]?.ToString();
+            AuthenticationUrl = payment["AuthenticationUrl"]?.ToString();
         }
 
         #endregion
@@ -50,6 +51,7 @@ namespace Cielo.Responses
         public string ProofOfSale { get; private set; }
         public string Tid { get; private set; }
         public string AuthorizationCode { get; private set; }
+        public string AuthenticationUrl { get; private set; }
         public Guid PaymentId { get; private set; }
         public Status Status { get; private set; }
         public ReturnCode ReturnCode { get; private set; }

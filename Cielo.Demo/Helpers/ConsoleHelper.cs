@@ -79,6 +79,7 @@ namespace Cielo.Demo
             Console.WriteLine("Return Message".PadRight(25, ' ') + $": {response.ReturnMessage}");
             Console.WriteLine("ProofOfSale".PadRight(25, ' ') + $": {response.ProofOfSale}");
             Console.WriteLine("MerchantOrderId".PadRight(25, ' ') + $": {response.MerchantOrderId}");
+            Console.WriteLine("AuthenticationUrl".PadRight(25, ' ') + $": {response.AuthenticationUrl}");
             Console.WriteLine("");
             Console.WriteLine("");
 

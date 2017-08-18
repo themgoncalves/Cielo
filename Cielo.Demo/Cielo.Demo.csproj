@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Cielo.Demo</RootNamespace>
     <AssemblyName>Cielo.Demo</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,9 +54,9 @@
     <Compile Include="Helpers\ConsoleHelper.cs" />
     <Compile Include="ICieloDemo.cs" />
     <Compile Include="ICieloDemoInterface.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CapturePartialTransaction.cs" />
+    <Compile Include="Services\CreateDebitCardTransaction.cs" />
     <Compile Include="Services\SaveCard.cs" />
     <Compile Include="Services\CheckTransaction.cs" />
     <Compile Include="Services\CaptureTransaction.cs" />

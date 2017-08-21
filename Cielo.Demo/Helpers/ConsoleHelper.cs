@@ -104,9 +104,9 @@ namespace Cielo.Demo
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
-        public static void WriteFooter(long runtime)
+        public static void WriteFooter(long elapsedTime)
         { 
-            string time = $"Runtime {runtime} ms";
+            string time = $"Elapsed {elapsedTime} ms";
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("");

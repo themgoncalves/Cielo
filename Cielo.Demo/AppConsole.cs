@@ -71,69 +71,7 @@ namespace Cielo.Demo
                 }
             }
         }
-
-        public void ExecuteX(String[] args)
-        {
-            int index = 0;
-            bool pause = false;
-            bool success = false;
-
-
-            // process any options
-            while (index < args.Length && args[index][0] == '-')
-            {
-                String option = args[index].Substring(1).ToLower();
-
-                if ("pause".Equals(option))
-                    pause = true;
-                index++;
-            }
-
-            if (index >= args.Length)
-            {
-                Console.WriteLine(@"Escolha uma opção para executar");
-                ListCommands();
-                //if (pause)
-                //{
-                //    Pause();
-                //}
-                return;
-            }
-
-            //String command = "megasena";
-            String command = args[index++];
-
-            // get any arguments
-            var pargs = new String[args.Length - index];
-            for (int i = 0; i < pargs.Length; i++)
-            {
-                pargs[i] = args[index + i];
-            }
-
-            foreach (CieloDemoInfo info in demos)
-            {
-                if (String.Compare(command, info.Command, true) == 0 ||
-                    String.Compare(command, "all", true) == 0)
-                {
-                    ICieloDemo demo = info.CreateInstance();
-                    demo.Execute(new ConsoleInterface(pargs));
-                    success = true;
-
-                    if (String.Compare(command, "all", true) != 0)
-                    {
-                        break;
-                    }
-                }
-            }
-
-            if (!success)
-            {
-                Console.WriteLine($"Comando desconhecido: {command}");
-                ListCommands();
-            }
-        }
-
-
+        
         public void Pause()
         {
             Console.Write("\n\nAperte qualquer tecla para continuar...");

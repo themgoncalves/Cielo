@@ -4,9 +4,9 @@ namespace Cielo.Enums
 {
     public enum Status
     {
-        [Description("Falha ao processar o pagamento")]
+        [Description("Aguardando atualização de status")]
         NotFinished = 0,
-        [Description("Meio de pagamento apto a ser capturado ou pago (Boleto)")]
+        [Description("Pagamento apto a ser capturado ou definido como pago")]
         Authorized = 1,
         [Description("Pagamento confirmado e finalizado")]
         PaymentConfirmed = 2,

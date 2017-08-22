@@ -2,8 +2,8 @@
 using System.Net;
 using Cielo.Configuration;
 using Cielo.Extensions;
-using Cielo.Request;
-using Cielo.Request.Entites;
+using Cielo.Requests;
+using Cielo.Requests.Entites;
 using Cielo.Responses;
 using Cielo.Responses.Exceptions;
 using Newtonsoft.Json;

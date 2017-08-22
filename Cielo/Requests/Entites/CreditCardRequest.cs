@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cielo.Enums;
 using Cielo.Extensions;
-using Cielo.Request.Entites.Common;
+using Cielo.Requests.Entites.Common;
 
 namespace Cielo.Requests.Entites
 {

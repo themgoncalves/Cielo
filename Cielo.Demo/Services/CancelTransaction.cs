@@ -60,7 +60,7 @@ namespace Cielo.Demo.Services
 
             try
             {
-                var response = cieloService.CancelTransaction(merchantOrderId: "123123");
+                var response = cieloService.CancelTransaction(paymentId: Guid.Parse("1a2d178a-dc87-4627-92a2-b5d18ba076cd"));
 
                 ConsoleHelper.WriteResult(response);
             }

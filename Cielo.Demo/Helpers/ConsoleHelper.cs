@@ -52,10 +52,31 @@ namespace Cielo.Demo
 
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("Reason Code".PadRight(25, ' ') + $": {response.ReasonCode}");
-            Console.WriteLine("Reason Message".PadRight(25, ' ') + $": {response.ReasonMessage}");
-            Console.WriteLine("");
-            Console.WriteLine("");
+
+            if (response?.Payments.Count > 0)
+            {
+                Console.WriteLine("ReasonCode".PadRight(25, ' ') + $": {response?.ReasonCode}");
+                Console.WriteLine("ReasonMessage".PadRight(25, ' ') + $": {response?.ReasonMessage}");
+                Console.WriteLine("Number of Payments".PadRight(25, ' ') + $": {response?.Payments.Count}");
+                Console.WriteLine("PaymentId".PadRight(25, ' ') + $": {response?.Payments[0].PaymentId}");
+                Console.WriteLine("");
+                Console.WriteLine("");
+            }
+            else
+            {
+                Console.WriteLine("MerchantOrderId".PadRight(25, ' ') + $": {response?.MerchantOrderId}");
+                Console.WriteLine("Installments".PadRight(25, ' ') + $": {response?.Payment?.Installments}");
+                Console.WriteLine("ServiceTaxAmount".PadRight(25, ' ') + $": {response?.Payment?.ServiceTaxAmount}");
+                Console.WriteLine("Capture".PadRight(25, ' ') + $": {response?.Payment?.Capture}");
+                Console.WriteLine("Authenticate".PadRight(25, ' ') + $": {response?.Payment?.Authenticate}");
+                Console.WriteLine("ProofOfSale".PadRight(25, ' ') + $": {response?.Payment?.ProofOfSale}");
+                Console.WriteLine("Tid".PadRight(25, ' ') + $": {response?.Payment?.Tid}");
+                Console.WriteLine("AuthorizationCode".PadRight(25, ' ') + $": {response?.Payment?.AuthorizationCode}");
+                Console.WriteLine("PaymentId".PadRight(25, ' ') + $": {response?.Payment?.PaymentId}");
+                Console.WriteLine("Status".PadRight(25, ' ') + $": {response?.Payment?.Status}");
+                Console.WriteLine("");
+                Console.WriteLine("");
+            }
 
             Console.ForegroundColor = ConsoleColor.Gray;
         }
@@ -128,7 +149,7 @@ namespace Cielo.Demo
             Console.ForegroundColor = ConsoleColor.Gray;
 
             Console.WriteLine("");
-            Console.WriteLine("HttpStatusCode".PadRight(20, ' ') + $": {ex.ResponseError.HttpStatusCode}");
+            Console.WriteLine("HttpStatusCode".PadRight(20, ' ') + $": {ex.ResponseError.HttpStatusCode.ToString()}");
             Console.WriteLine("Id".PadRight(20, ' ') + $": {ex.ResponseError.Id}");
             Console.WriteLine("Message".PadRight(20, ' ') + $": {ex.ResponseError.Message}");
         }

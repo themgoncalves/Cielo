@@ -60,7 +60,7 @@ namespace Cielo.Demo.Services
 
             try
             {
-                var response = cieloService.CheckTransaction(merchantOrderId: "14421");
+                var response = cieloService.CheckTransaction(paymentId: Guid.Parse("1a2d178a-dc87-4627-92a2-b5d18ba076cd"));
 
                 ConsoleHelper.WriteResult(response);
             }

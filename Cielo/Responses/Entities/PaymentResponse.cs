@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cielo.Enums;
 
 namespace Cielo.Responses.Entities
@@ -15,7 +16,7 @@ namespace Cielo.Responses.Entities
         public string ProofOfSale { get; set; }
         public string Tid { get; set; }
         public string AuthorizationCode { get; set; }
-        public string PaymentId { get; set; }
+        public Guid PaymentId { get; set; }
         public PaymentType Type { get; set; }
         public int Amount { get; set; }
         public string Currency { get; set; }

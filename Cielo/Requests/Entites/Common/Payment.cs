@@ -2,7 +2,7 @@
 using Cielo.Enums;
 using Newtonsoft.Json;
 
-namespace Cielo.Request.Entites.Common
+namespace Cielo.Requests.Entites.Common
 {
     public class Payment
     {

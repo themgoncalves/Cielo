@@ -5,7 +5,7 @@ using Cielo.Enums;
 using Cielo.Extensions;
 using Cielo.Request.Entites.Common;
 
-namespace Cielo.Request.Entites
+namespace Cielo.Requests.Entites
 {
     public class CreditCardRequest
     {

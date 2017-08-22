@@ -1,4 +1,4 @@
-﻿namespace Cielo.Request.Entites.Common
+﻿namespace Cielo.Requests.Entites.Common
 {
     public interface ICard
     {

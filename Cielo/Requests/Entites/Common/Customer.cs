@@ -7,7 +7,7 @@ using Cielo.Enums;
 using Cielo.Extensions;
 using Newtonsoft.Json;
 
-namespace Cielo.Request.Entites.Common
+namespace Cielo.Requests.Entites.Common
 {
     public class Customer
     {

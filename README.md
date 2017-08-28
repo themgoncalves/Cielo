@@ -57,7 +57,7 @@ Não tem problema, basta [Clicar aqui](https://github.com/oforia/Cielo/releases)
 Basta você adicionar as seguintes chaves e substituir com seus valores na seção appSettings de seu Web.config ou App.config.
 
 Não possui credenciais para Sandbox? [Clique aqui](https://cadastrosandbox.cieloecommerce.cielo.com.br) para seu o seu.
-```csharp
+```xml
   <appSettings>
 
     <!-- Cielo -->

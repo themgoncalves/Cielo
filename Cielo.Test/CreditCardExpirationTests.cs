@@ -1,4 +1,4 @@
-﻿using Cielo.Request.Entites.Common;
+﻿using Cielo.Requests.Entites.Common;
 using FluentAssertions;
 using NUnit.Framework;
 

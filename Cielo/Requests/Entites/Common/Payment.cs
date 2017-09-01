@@ -18,7 +18,25 @@ namespace Cielo.Requests.Entites.Common
         /// <summary>
         /// Payment Information
         /// </summary>
-        /// <param name="type">Type. Eg: CredictCard, DebitCard, etc.</param>
+        /// <param name="type">Type. Eg: CredictCard, DebitCard, Eletronic Transfer, etc.</param>
+        /// <param name="amount">Total purchase value</param>
+        /// <param name="provider">Provider name</param>
+        /// <param name="returnUrl">Url which user will be redirect after finish the payment process.</param>
+        public Payment(PaymentType type,
+                       decimal amount,
+                       EletronicTransferProvider provider,
+                       string returnUrl)
+        {
+            Type = type.ToString();
+            Amount = (int)(amount * 100);
+            Provider = provider.ToString();
+            ReturnUrl = returnUrl;
+        }
+
+        /// <summary>
+        /// Payment Information
+        /// </summary>
+        /// <param name="type">Type. Eg: CredictCard, DebitCard, Eletronic Transfer, etc.</param>
         /// <param name="amount">Total purchase value</param>
         /// <param name="installments">Installments</param>
         /// <param name="softDescriptor">Text to be printed in the Bank Invoice</param>
@@ -68,6 +86,7 @@ namespace Cielo.Requests.Entites.Common
         public string SoftDescriptor { get; private set; }
         public bool Capture { get; private set; }
         public bool Authenticate { get; private set; }
+        public string Provider { get; private set; }
         public string ReturnUrl { get; private set; }
         public CreditCard CreditCard
         {

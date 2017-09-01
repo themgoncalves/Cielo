@@ -46,6 +46,31 @@ namespace Cielo.Test
         }
 
         [Test]
+        public void CreateEletronicTransferRequest_ShouldReturnEletronicTransferResponse()
+        {
+            CieloService cieloService = new CieloService();
+
+            Customer customer = new Customer("John Doe");                        
+
+            Payment payment = new Payment(PaymentType.EletronicTransfer, 100.00m, EletronicTransferProvider.BancodoBrasil, "http://www.cielo.com.br/");
+
+            var transaction = new TransactionRequest("14421", customer, payment);
+
+            var response = cieloService.CreateEletronicTransfer(transaction);
+
+            response.Should().NotBeNull();
+            response.Should().BeOfType<EletronicTransferResponse>();
+            response.MerchantOrderId.Should().NotBeEmpty();
+            response.PaymentId.Should().NotBeEmpty();
+            response.Url.Should().NotBeEmpty();
+            response.Url.Should().MatchRegex(@"^http(s)?:\/\/([\w-]+.)+[\w-]+(\/[\w- .\/?%&=])?$");
+            response.Amount.Should().Equals(10000);
+            response.Status.Should().BeOfType<Status>();
+            response.Provider.Should().BeOfType<EletronicTransferProvider>();
+            response.Provider.Should().Be(EletronicTransferProvider.Simulado);
+        }
+        
+        [Test]
         public void CreateDebitCard_ShouldReturnNewTransactionResponse()
         {
             CustomConfiguration configuration = new CustomConfiguration()

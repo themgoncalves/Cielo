@@ -56,6 +56,7 @@
     <Compile Include="Enums\CardBrand.cs" />
     <Compile Include="Enums\Currency.cs" />
     <Compile Include="Enums\CustomerIdentityType.cs" />
+    <Compile Include="Enums\EletronicTransferProvider.cs" />
     <Compile Include="Enums\PaymentType.cs" />
     <Compile Include="Enums\AuthorizationStatus.cs" />
     <Compile Include="Enums\Status.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Requests\Entites\TransactionRequest.cs" />
     <Compile Include="Responses\CardResponse.cs" />
     <Compile Include="Responses\CheckTransactionResponse.cs" />
+    <Compile Include="Responses\EletronicTransferResponse.cs" />
     <Compile Include="Responses\Entities\AddressResponse.cs" />
     <Compile Include="Responses\Entities\CreditCardResponse.cs" />
     <Compile Include="Responses\Entities\CustomerResponse.cs" />

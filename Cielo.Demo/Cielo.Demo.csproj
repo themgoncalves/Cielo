@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CapturePartialTransaction.cs" />
     <Compile Include="Services\CreateDebitCardTransaction.cs" />
+    <Compile Include="Services\CreateEletronicTransfer.cs" />
     <Compile Include="Services\SaveCard.cs" />
     <Compile Include="Services\CheckTransaction.cs" />
     <Compile Include="Services\CaptureTransaction.cs" />

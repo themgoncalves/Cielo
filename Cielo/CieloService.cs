@@ -51,6 +51,24 @@ namespace Cielo
         }
 
         /// <summary>
+        /// Create a new Eletronic Transfer
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public EletronicTransferResponse CreateEletronicTransfer(TransactionRequest request)
+        {
+            RequestParams param = new RequestParams()
+            {
+                baseUrl = Configuration.DefaultEndpoint,
+                method = Method.POST,
+                resource = "1/sales/",
+                body = request
+            };
+
+            return Execute<EletronicTransferResponse>(param);
+        }
+
+        /// <summary>
         /// Cancel a transaction
         /// </summary>
         /// <param name="paymentId">Payment transaction Id</param>

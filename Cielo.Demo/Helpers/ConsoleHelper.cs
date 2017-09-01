@@ -21,6 +21,29 @@ namespace Cielo.Demo
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
+        public static void WriteResult(EletronicTransferResponse response)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine("");
+            Console.WriteLine("Done!");
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Status".PadRight(25, ' ') + $": {response.Status}");
+            Console.WriteLine("Url".PadRight(25, ' ') + $": {response.Url}");
+            Console.WriteLine("PaymentId".PadRight(25, ' ') + $": {response.PaymentId}");
+            Console.WriteLine("MerchantOrderId".PadRight(25, ' ') + $": {response.MerchantOrderId}");
+            Console.WriteLine("Type".PadRight(25, ' ') + $": {response.PaymentType}");
+            Console.WriteLine("Amount".PadRight(25, ' ') + $": {response.Amount}");
+            Console.WriteLine("");
+            Console.WriteLine("");
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+        }
+
         public static void WriteResult(TransactionResponse response)
         {
             Console.ForegroundColor = ConsoleColor.Green;

@@ -22,7 +22,7 @@ Os seguintes recursos do Webservice são suportados pela aplicação:
 
 * ~~Transação com Boleto~~.
 
-* ~~Transação com Transferência Eletrônica~~.
+* Transação com Transferência Eletrônica.
 
 * Consulta de transação.
 
@@ -230,6 +230,42 @@ catch (Exception ex)
 }
 ```
 
+### Criando uma transferência eletrônica
+
+
+```csharp
+using Cielo.Enums;
+using Cielo.Request.Entites;
+using Cielo.Request.Entites.Common;
+using Cielo.Responses.Exceptions;
+//...
+
+Customer customer = new Customer("John Doe");                        
+
+Payment payment = new Payment(PaymentType.EletronicTransfer, 100.00m, EletronicTransferProvider.BancodoBrasil, "http://www.cielo.com.br/");
+
+var transaction = new TransactionRequest("14421", customer, payment);
+
+var cieloService = new CieloService(configuration);
+
+try
+{
+    var response = cieloService.CreateEletronicTransfer(transaction);
+    Console.WriteLine($"Feito! Status: {response.Status}, PaymentId: {response.PaymentId}, Url: {response.Url}"); //exemplo de retorno
+}
+catch (ResponseException ex)
+{
+    //Erro personalizado das Requisições
+    //Error Id:       ex.ResponseError.Id
+    //Message:        ex.ResponseError.Message
+    //HttpStatusCode: ex.ResponseError.HttpStatusCode
+}
+catch (Exception ex)
+{
+    //erros genéricos
+}
+```
+
 ### Cancelando uma transação
 
 
@@ -419,6 +455,7 @@ cancel              : Cancel a transaction
 capture             : Capture a transaction
 capture-partial     : Capture partially a transaction
 check               : Check a transaction
+eletronic           : Create a new eletronic transfer
 new                 : Create a new transaction
 new-cardtoken       : Create a new transaction with a Card Token
 savecard            : Salvar um Cartão de Crédito

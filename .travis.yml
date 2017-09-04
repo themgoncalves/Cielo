@@ -5,4 +5,8 @@ mono:
   - 3.12.0
   - 3.10.0
 install:
+  - sudo apt-get install nunit-console
   - nuget restore solution-name.sln
+script:
+  - xbuild ./Cielo.sln
+  - nunit-console ./Cielo.Tests/bin/Debug/Cielo.Tests.dll

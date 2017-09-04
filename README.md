@@ -1,3 +1,7 @@
+[![Travis](https://travis-ci.org/oforia/Cielo.svg)](https://travis-ci.org/oforia/Cielo)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/made-with-c-sharp.svg)](http://forthebadge.com)
+
 # Cielo E-Commerce
 
 Integração com o Webservice 3.0 do [Cielo E-Commerce](http://developercielo.github.io/Webservice-3.0/).

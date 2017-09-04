@@ -3,7 +3,6 @@ solution: Cielo.sln
 install:
   - sudo apt-get install nunit-console
   - nuget restore Cielo.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - msbuild Cielo.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Cielo.Tests/bin/Debug/Cielo.Tests.dll
+  - nunit-console ./Cielo.Tests/bin/Debug/Cielo.Tests.dll -exclude Integration,NotWorkingOnMono

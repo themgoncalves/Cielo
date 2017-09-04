@@ -8,5 +8,5 @@ install:
   - sudo apt-get install nunit-console
   - nuget restore Cielo.sln
 script:
-  - xbuild ./Cielo.sln
-  - nunit-console ./Cielo.Tests/bin/Debug/Cielo.Tests.dll
+  - xbuild Cielo.sln
+  - nunit-console Cielo.Tests/bin/Debug/Cielo.Tests.dll

@@ -115,9 +115,13 @@ namespace Cielo.Test
         {
             CieloService cieloService = new CieloService();
 
+            CreditCardRequest creditCardToSave = new CreditCardRequest("John Doe", "0000.0000.0000.0004", "John Doe", new CardExpiration(2020, 8), CardBrand.MasterCard);
+
+            var creditCardResponse = cieloService.SaveCard(creditCardToSave);
+
             Customer customer = new Customer("John Doe");
 
-            CreditCard creditCard = new CreditCard("ea9b8398-e8bb-4e77-a865-66109fc4563e", "123", CardBrand.Visa);
+            CreditCard creditCard = new CreditCard(creditCardResponse.CardToken.ToString(), "123", CardBrand.Visa);
 
             Payment payment = new Payment(PaymentType.CreditCard, 380.2m, 1, "", creditCard: creditCard);
 
@@ -142,7 +146,7 @@ namespace Cielo.Test
         {
             CieloService cieloService = new CieloService();
 
-            cieloService.Invoking(c => c.CancelTransaction(merchantOrderId: "123123")).ShouldThrow<ResponseException>().WithMessage("Transaction not available to void");
+            cieloService.Invoking(c => c.CancelTransaction(merchantOrderId: "123123")).ShouldThrow<ResponseException>();
         }
 
         [Test]
@@ -150,7 +154,7 @@ namespace Cielo.Test
         {
             CieloService cieloService = new CieloService();
 
-            cieloService.Invoking(c => c.CaptureTransaction(Guid.Parse("55158bb3-2bb9-4e76-a92b-708b51245f4b"))).ShouldThrow<ResponseException>().WithMessage("Transaction not available to capture");
+            cieloService.Invoking(c => c.CaptureTransaction(Guid.Parse("55158bb3-2bb9-4e76-a92b-708b51245f4b"))).ShouldThrow<ResponseException>();
         }
         
         [Test]
@@ -158,7 +162,7 @@ namespace Cielo.Test
         {
             CieloService cieloService = new CieloService();
 
-            cieloService.Invoking(c => c.CaptureTransaction(Guid.Parse("55158bb3-2bb9-4e76-a92b-708b51245f4b"), 20.00m)).ShouldThrow<ResponseException>().WithMessage("Transaction not available to capture");
+            cieloService.Invoking(c => c.CaptureTransaction(Guid.Parse("55158bb3-2bb9-4e76-a92b-708b51245f4b"), 20.00m)).ShouldThrow<ResponseException>();
         }
 
         [Test]
@@ -166,7 +170,20 @@ namespace Cielo.Test
         {
             CieloService cieloService = new CieloService();
 
-            var response = cieloService.CheckTransaction(paymentId: Guid.Parse("B4BB5BBA-3DDF-4F3E-8A9C-6EF17D9E23E6"));
+            Customer customer = new Customer("John Doe");
+
+
+            CreditCard creditCard = new CreditCard("0000.0000.0000.0001",
+                                            "John Doe",
+                                            new CardExpiration(2017, 9), "123", CardBrand.Visa);
+
+            Payment payment = new Payment(PaymentType.CreditCard, 380.2m, 1, "", creditCard: creditCard);
+
+            var transaction = new TransactionRequest("14421", customer, payment);
+
+            var transactionResponse = cieloService.CreateTransaction(transaction);            
+
+            var response = cieloService.CheckTransaction(paymentId: transactionResponse.PaymentId);
 
             response.Should().NotBeNull();
             response.Should().BeOfType<CheckTransactionResponse>();

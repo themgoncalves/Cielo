@@ -346,5 +346,5 @@ __pycache__/
 # tools/**
 # !tools/packages.config
 
-Cielo.Demo/App.config
+#Cielo.Demo/App.config
 packages/

@@ -1,8 +1,10 @@
 language: csharp
 solution: Cielo.sln
+
 install:
   - sudo apt-get install nunit-console
   - nuget restore Cielo.sln
+
 script:
   - msbuild /p:Configuration=Debug Cielo.sln
-  - nunit-console Cielo.Test/bin/Debug/Cielo.Tests.dll -exclude Integration,NotWorkingOnMono
+  - nunit-console Cielo.Test/bin/Debug/Cielo.Test.dll -exclude Integration,NotWorkingOnMono

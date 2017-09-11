@@ -74,7 +74,7 @@ namespace Cielo
         /// <param name="paymentId">Payment transaction Id</param>
         /// <param name="merchantOrderId">Order Id</param>
         /// <returns></returns>
-        public TransactionResponse CancelTransaction(Guid? paymentId = null, string merchantOrderId = null)
+        public TransactionResponse CancelTransaction(Guid? paymentId = null, string merchantOrderId = null, decimal amount = 0)
         {
             if (paymentId == null && String.IsNullOrWhiteSpace(merchantOrderId))
                 throw new ArgumentNullException("In order to proceed with the cancellation, you must provide the 'paymentId' or 'merchantOrderId'");
@@ -83,12 +83,14 @@ namespace Cielo
             {
                 baseUrl = Configuration.DefaultEndpoint,
                 method = Method.PUT,
-                resource = (paymentId != null ? $"/1/sales/{paymentId}/void" : $"/1/sales/OrderId/{merchantOrderId}/void")
+                resource = (amount == 0 ? 
+                (paymentId != null ? $"/1/sales/{paymentId}/void" : $"/1/sales/OrderId/{merchantOrderId}/void") :
+                (paymentId != null ? $"/1/sales/{paymentId}/void?amount={amount}" : $"/1/sales/OrderId/{merchantOrderId}/void?amount={amount}"))
             };
 
             return Execute<TransactionResponse>(param);
         }
-
+        
         /// <summary>
         /// Capture a transaction
         /// </summary>

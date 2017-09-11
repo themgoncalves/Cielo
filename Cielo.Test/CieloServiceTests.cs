@@ -150,6 +150,14 @@ namespace Cielo.Test
         }
 
         [Test]
+        public void CancelPartialTransaction_GivenFakeMerchantOrderId_ShouldThrowAnExceptionOfTypeResponseException()
+        {
+            CieloService cieloService = new CieloService();
+
+            cieloService.Invoking(c => c.CancelTransaction(merchantOrderId: "123123", amount: 20m)).ShouldThrow<ResponseException>();
+        }
+
+        [Test]
         public void CaptureTransaction_GivenFakePaymentId_ShouldThrowAnExceptionOfTypeResponseException()
         {
             CieloService cieloService = new CieloService();

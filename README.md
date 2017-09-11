@@ -272,6 +272,9 @@ catch (Exception ex)
 ### Cancelando uma transação
 
 
+#### Cancelar total
+
+
 ```csharp
 using Cielo.Enums;
 using Cielo.Request.Entites;
@@ -305,6 +308,41 @@ catch (Exception ex)
 }
 ```
 
+#### Cancelar parcialmente
+
+
+```csharp
+using Cielo.Enums;
+using Cielo.Request.Entites;
+using Cielo.Request.Entites.Common;
+using Cielo.Responses.Exceptions;
+//...
+
+CieloService cieloService = new CieloService(configuration);
+
+try
+{
+    //você possui duas opções de consulta
+    //1) através do MerchantOrderId;
+    //2) Ou pelo PaymentId
+    
+    var response = cieloService.CancelTransaction(merchantOrderId: "123123", amount: 20.00m);    
+    //var response = cieloService.CancelTransaction(paymentId: Guid.Parse("55158bb3-2bb9-4e76-a92b-708b51245f4b"), amount: 20.00m);
+    
+    Console.WriteLine($"Feito! Status: {response.Status}, Return Code: {response.ReturnCode}, ReturnMessage: {response.ReturnMessage}");
+}
+catch (ResponseException ex)
+{
+    //Erro personalizado das Requisições
+    //Error Id:       ex.ResponseError.Id
+    //Message:        ex.ResponseError.Message
+    //HttpStatusCode: ex.ResponseError.HttpStatusCode
+}
+catch (Exception ex)
+{
+    //erros genéricos
+}
+```
 
 ### Capturando uma transação
 

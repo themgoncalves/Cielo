@@ -55,6 +55,7 @@
     <Compile Include="ICieloDemo.cs" />
     <Compile Include="ICieloDemoInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CancelPartialTransaction .cs" />
     <Compile Include="Services\CapturePartialTransaction.cs" />
     <Compile Include="Services\CreateDebitCardTransaction.cs" />
     <Compile Include="Services\CreateEletronicTransfer.cs" />

@@ -1,7 +1,8 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/made-with-c-sharp.svg)](http://forthebadge.com)
 
-# Cielo E-Commerce [![Travis](https://travis-ci.org/oforia/Cielo.svg)](https://travis-ci.org/oforia/Cielo)
+# Cielo E-Commerce [![Travis](https://travis-ci.org/themgoncalves/Cielo.svg)](https://travis-ci.org/themgoncalves/Cielo) 
+[![GitHub issues](https://img.shields.io/github/issues/themgoncalves/Cielo.svg)](https://github.com/themgoncalves/Cielo/issues) [![GitHub stars](https://img.shields.io/github/stars/themgoncalves/Cielo.svg)](https://github.com/themgoncalves/Cielo/stargazers) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/themgoncalves/Cielo/master/LICENSE)
 
 Integração com o Webservice 3.0 do [Cielo E-Commerce](http://developercielo.github.io/Webservice-3.0/).
 Projeto de demonstração na solução.

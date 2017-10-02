@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using Newtonsoft.Json;
 
 namespace Cielo.Requests.Entites.Common
@@ -21,6 +22,9 @@ namespace Cielo.Requests.Entites.Common
         /// <param name="month">Month</param>
         public CardExpiration(short year, byte month)
         {
+            if ((short)DateTime.Now.Year >= year && (byte)DateTime.Now.Month > month) 
+                throw new Exception("Card Expiration Date is invalid");
+
             _year = year;
             _month = month;
         }

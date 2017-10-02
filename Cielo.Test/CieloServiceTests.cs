@@ -24,7 +24,7 @@ namespace Cielo.Test
 
             CreditCard creditCard = new CreditCard("0000.0000.0000.0001",
                                             "John Doe",
-                                            new CardExpiration(2017, 9), "123", CardBrand.Visa);
+                                            new CardExpiration(2020, 9), "123", CardBrand.Visa);
 
             Payment payment = new Payment(PaymentType.CreditCard, 380.2m, 1, "", creditCard: creditCard);
 
@@ -89,7 +89,7 @@ namespace Cielo.Test
 
             DebitCard debitCard = new DebitCard("0000.0000.0000.0001",
                                             "John Doe",
-                                            new CardExpiration(2017, 9), "123", CardBrand.Visa);
+                                            new CardExpiration(2020, 9), "123", CardBrand.Visa);
 
             Payment payment = new Payment(PaymentType.DebitCard, 380.2m, 1, "", debitCard: debitCard, returnUrl: configuration.ReturnUrl);
 
@@ -183,7 +183,7 @@ namespace Cielo.Test
 
             CreditCard creditCard = new CreditCard("0000.0000.0000.0001",
                                             "John Doe",
-                                            new CardExpiration(2017, 9), "123", CardBrand.Visa);
+                                            new CardExpiration(2020, 9), "123", CardBrand.Visa);
 
             Payment payment = new Payment(PaymentType.CreditCard, 380.2m, 1, "", creditCard: creditCard);
 

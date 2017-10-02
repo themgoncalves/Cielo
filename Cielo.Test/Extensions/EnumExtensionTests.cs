@@ -3,7 +3,7 @@ using Cielo.Enums;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace Cielo.Test
+namespace Cielo.Test.Extensions
 {
     [TestFixture]
     public class EnumExtensionTests

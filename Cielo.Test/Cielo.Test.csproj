@@ -56,12 +56,21 @@
   <ItemGroup>
     <Compile Include="CieloServiceTests.cs" />
     <Compile Include="ConfigurationTests.cs" />
-    <Compile Include="CreditCardExpirationTests.cs" />
-    <Compile Include="DateTimeExtensionTests.cs" />
-    <Compile Include="EnumExtensionTests.cs" />
+    <Compile Include="Requests\Entites\AddressTests.cs" />
+    <Compile Include="Requests\Entites\CreditCardRequestTests.cs" />
+    <Compile Include="Requests\Entites\CreditCardTests.cs" />
+    <Compile Include="Requests\Entites\CustomerTests.cs" />
+    <Compile Include="Requests\Entites\DebitCardTests.cs" />
+    <Compile Include="Requests\Entites\PaymentTests.cs" />
+    <Compile Include="Requests\Entites\CreditCardExpirationTests.cs" />
+    <Compile Include="Requests\Entites\TransactionRequestTests.cs" />
+    <Compile Include="Extensions\DateTimeExtensionTests.cs" />
+    <Compile Include="Extensions\EnumExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatusExtensionTests.cs" />
-    <Compile Include="StringExtensionTests.cs" />
+    <Compile Include="Extensions\StatusExtensionTests.cs" />
+    <Compile Include="Extensions\StringExtensionTests.cs" />
+    <Compile Include="Responses\Exceptions\ErrorResponseTests.cs" />
+    <Compile Include="Responses\Exceptions\ResponseExceptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,6 +81,9 @@
       <Project>{82c19b46-7f0d-4137-bc0c-391b9c3ded1d}</Project>
       <Name>Cielo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Responses\Entities\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

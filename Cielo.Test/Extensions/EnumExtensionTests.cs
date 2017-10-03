@@ -17,6 +17,14 @@ namespace Cielo.Test.Extensions
         }
 
         [Test]
+        public void ToDescription_ShouldReturnEnumToStringWhenThereIsNoDescriptionAttribute()
+        {
+            EletronicTransferProvider provider = EletronicTransferProvider.BancodoBrasil;
+
+            provider.ToDescription().Should().Be(EletronicTransferProvider.BancodoBrasil.ToString());
+        }
+
+        [Test]
         public void ToEnum_ShouldConvertEnumStringValueToEnum()
         {
             PaymentType paymentType = PaymentType.EletronicTransfer;
@@ -30,6 +38,15 @@ namespace Cielo.Test.Extensions
         {
             PaymentType paymentType = PaymentType.Boleto;
             var convertedEnum = EnumExtension.ToEnum<PaymentType>("NonExistentEnumValue", PaymentType.Boleto);
+
+            paymentType.Should().Be(convertedEnum);
+        }
+
+        [Test]
+        public void ToEnum_ShouldReturnPreSelectedDefaultEnumValueWhenValueIsEmpty()
+        {
+            PaymentType paymentType = PaymentType.Boleto;
+            var convertedEnum = EnumExtension.ToEnum<PaymentType>("", PaymentType.Boleto);
 
             paymentType.Should().Be(convertedEnum);
         }

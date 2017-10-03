@@ -25,6 +25,7 @@ namespace Cielo.Test
             configuration.QueryEndpoint.Should().Be(customConfiguration.QueryEndpoint);
             configuration.MerchantId.Should().Be(customConfiguration.MerchantId);
             configuration.MerchantKey.Should().Be(customConfiguration.MerchantKey);
+            configuration.ReturnUrl.Should().Be(customConfiguration.ReturnUrl);
         }
     }
 }

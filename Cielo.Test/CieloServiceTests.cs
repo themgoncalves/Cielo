@@ -150,6 +150,14 @@ namespace Cielo.Test
         }
 
         [Test]
+        public void CancelTransaction_GivenNoOrderId_ShouldThrowAnExceptionOfTypeArgumentNullException()
+        {
+            CieloService cieloService = new CieloService();
+
+            cieloService.Invoking(c => c.CancelTransaction(merchantOrderId: "")).ShouldThrow<ArgumentNullException>();
+        }
+
+        [Test]
         public void CancelPartialTransaction_GivenFakeMerchantOrderId_ShouldThrowAnExceptionOfTypeResponseException()
         {
             CieloService cieloService = new CieloService();
@@ -200,6 +208,14 @@ namespace Cielo.Test
             response.Payment.AuthorizationCode.Should().NotBeEmpty();
             response.Payment.PaymentId.Should().NotBeEmpty();
             response.Payment.Status.Should().BeOfType<Status>();
+        }
+
+        [Test]
+        public void CheckTransaction_GivenNullPaymentId_ShouldThrowAnExceptionOfTypeArgumentNullException()
+        {
+            CieloService cieloService = new CieloService();
+
+            cieloService.Invoking(c => c.CheckTransaction(paymentId: null)).ShouldThrow<ArgumentNullException>();
         }
 
         [Test]

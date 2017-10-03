@@ -56,7 +56,7 @@
   <ItemGroup>
     <Compile Include="CieloServiceTests.cs" />
     <Compile Include="ConfigurationTests.cs" />
-    <Compile Include="Extensions\UrlExtesionsTests.cs" />
+    <Compile Include="Extensions\UrlExtesions.cs" />
     <Compile Include="Requests\Entites\AddressTests.cs" />
     <Compile Include="Requests\Entites\CreditCardRequestTests.cs" />
     <Compile Include="Requests\Entites\CreditCardTests.cs" />

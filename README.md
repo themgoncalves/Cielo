@@ -9,7 +9,7 @@ Integração com o Webservice 3.0 do [Cielo E-Commerce](http://developercielo.gi
 Projeto de demonstração na solução.
 
 
-### Suporte
+## Suporte
 
 Os seguintes recursos do Webservice são suportados pela aplicação:
 
@@ -41,7 +41,7 @@ Os seguintes recursos do Webservice são suportados pela aplicação:
 
 Existem dois métodos para você utilizar este repositório.
 
-#### Familiar com Git?
+### Familiar com Git?
 
 Basta executar os comandos abaixos para iniciar:
 ```
@@ -50,14 +50,14 @@ Basta executar os comandos abaixos para iniciar:
 ```
 E após finalizar, abrir a solução (_Cielo.sln_) com o Visual Studio
 
-#### Não é Familiar com Git?
+### Não é Familiar com Git?
 
 Não tem problema, basta [Clicar aqui](https://github.com/oforia/Cielo/releases) para baixar o repositório em arquivo .zip e depois extrair em seu local favorito.
 
 
 ## Configurações
 
-#### Web.config ou App.config
+### Web.config ou App.config
 
 Basta você adicionar as seguintes chaves e substituir com seus valores na seção appSettings de seu Web.config ou App.config.
 
@@ -112,11 +112,11 @@ CieloService cieloService = new CieloService(configuration);
 
 ```
 
-## Documentação
+# Documentação
 
 Os exemplos a seguir se aplicam na grande maioria dos casos, mas se mesmo assim precisar de algo diferente, basta ler a [Documentação da Cielo](http://developercielo.github.io/Webservice-3.0/) e personalizar as _models_ para envio.
 
-### Criando uma transação com cartão de crédito
+## Criando uma transação com cartão de crédito
 
 
 ```csharp
@@ -156,7 +156,7 @@ catch (Exception ex)
 }
 ```
 
-### Criando uma transação com cartão de débito
+## Criando uma transação com cartão de débito
 
 
 ```csharp
@@ -197,7 +197,7 @@ catch (Exception ex)
 }
 ```
 
-### Criando uma transação com Card Token
+## Criando uma transação com Card Token
 
 
 ```csharp
@@ -235,7 +235,7 @@ catch (Exception ex)
 }
 ```
 
-### Criando uma transferência eletrônica
+## Criando uma transferência eletrônica
 
 
 ```csharp
@@ -271,10 +271,10 @@ catch (Exception ex)
 }
 ```
 
-### Cancelando uma transação
+## Cancelando uma transação
 
 
-#### Cancelar total
+### Cancelar total
 
 
 ```csharp
@@ -310,7 +310,7 @@ catch (Exception ex)
 }
 ```
 
-#### Cancelar parcialmente
+### Cancelar parcialmente
 
 
 ```csharp
@@ -346,10 +346,10 @@ catch (Exception ex)
 }
 ```
 
-### Capturando uma transação
+## Capturando uma transação
 
 
-#### Captura Total
+### Captura Total
 
 ```csharp
 using Cielo.Enums;
@@ -379,7 +379,7 @@ catch (Exception ex)
 ```
 
 
-#### Captura Parcial
+### Captura Parcial
 
 ```csharp
 using Cielo.Enums;
@@ -409,7 +409,7 @@ catch (Exception ex)
 ```
 
 
-### Consultar Transação
+## Consultar Transação
 
 ```csharp
 using Cielo.Enums;
@@ -444,7 +444,7 @@ catch (Exception ex)
 ```
 
 
-### Salvando um Cartão
+## Salvando um Cartão
 
 ```csharp
 using Cielo.Enums;
@@ -474,7 +474,7 @@ catch (Exception ex)
 }
 ```
 
-## Projeto de Demonstração
+# Projeto de Demonstração
 
 Ao abrir a solução (_Cielo.sln_) você encontrará um projeto chamado **Cielo.Demo**.
 Para executá-lo é simples, basta seguir os seguintes passos:

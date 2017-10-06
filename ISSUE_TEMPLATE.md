@@ -1,5 +1,4 @@
-Issue tracker is **ONLY** used for reporting bugs. NO NEW FEATURE ACCEPTED! Use [stackoverflow](https://stackoverflow.com) for supporting issues.
-
+# Issue Title
 <!--- Provide a general summary of the issue in the Title above -->
 
 ## Expected Behavior
@@ -30,3 +29,5 @@ Issue tracker is **ONLY** used for reporting bugs. NO NEW FEATURE ACCEPTED! Use 
 
 ## Possible Implementation
 <!--- Not obligatory, but suggest an idea for implementing addition or change -->
+
+## Other Comments
